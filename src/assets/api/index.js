@@ -1,10 +1,9 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
 
-const mockUrl = ''
-// const mockUrl = 'https://passport.ymeun.com/'
+// const mockUrl = ''
+const mockUrl = 'http://wthrcdn.etouch.cn/'
 const url = mockUrl
-
 
 const service = axios.create({
   baseURL: url,  // 开发环境跨域配置的地址
@@ -15,11 +14,11 @@ const service = axios.create({
 // request拦截器
 service.interceptors.request.use(
   config => {
-      if (localStorage.getItem('webToken')) {
-          config.headers['Authorization'] = 'Bearer ' + localStorage.getItem('webToken')
-          config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-          config.headers['Accept'] = 'application/json'
-      }
+      // if (localStorage.getItem('webToken')) {
+      //     config.headers['Authorization'] = 'Bearer ' + localStorage.getItem('webToken')
+      //     config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+      //     config.headers['Accept'] = 'application/json'
+      // }
     return config
   },
   error => {
@@ -45,37 +44,13 @@ service.interceptors.response.use(
                       duration: 1500
                   })
                   break;
-              case 401:
-                  Message({
-                      message: `登录失效,请重新登录`,
-                      showClose: true,
-                      type: 'error',
-                      duration: 1500
-                  })
-                  setTimeout(()=>{
-                      localStorage.removeItem("webToken");
-                      window.location.href = "/#/Login";
-                  },1500)
-                  break;
-              case 419:
-                  Message({
-                      message: `登录失效,请重新登录`,
-                      showClose: true,
-                      type: 'error',
-                      duration: 1500
-                  })
-                  setTimeout(()=>{
-                      localStorage.removeItem("webToken");
-                      window.location.href = "/#/Login";
-                  },1500)
-                  break;
               default:
                   return Promise.reject(error);
                   break;
           }
       }else{
-          localStorage.removeItem("webToken");
-          window.location.href = "/#/Login";
+          // localStorage.removeItem("webToken");
+          // window.location.href = "/#/Login";
       }
 
     return Promise.reject(error)

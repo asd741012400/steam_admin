@@ -4,9 +4,9 @@
         
         <nav-item></nav-item>
         <el-container class="elContainer">
-            <div :style="'min-height: '+minHeight+'px;width: 100%;background-color: #f8f8f8'">
+            <div :style="'width: 100%;background-color: #f8f8f8;padding:20px;'">
                 <div class="contentRoute">
-                    <div class="mainBackground">
+                    <div class="mainBackground" :style="'background-color: #fff;padding:20px;'">
                         <router-view></router-view>
                     </div>
                 </div>
@@ -50,14 +50,14 @@
 
             let _this = this
 
-            window.onscroll = function (e) {
+            // window.onscroll = function (e) {
 
-                if($(window).scrollTop() >= 300){
-                    _this.showBackTop = true
-                }else{
-                    _this.showBackTop = false
-                }
-            }
+            //     if($(window).scrollTop() >= 300){
+            //         _this.showBackTop = true
+            //     }else{
+            //         _this.showBackTop = false
+            //     }
+            // }
         },
 
         updated(){
@@ -68,4 +68,16 @@
 
 <style scoped>
     
+</style>
+<style>
+.el-container{
+    display:flex
+}
+.el-container .NavItem{
+    width: 200px;
+}
+.el-container .el-container{
+    flex: 1;
+}
+
 </style>

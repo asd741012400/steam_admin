@@ -56,7 +56,7 @@ export default {
                 console.log(this.form);
                 this.disabled = true;
                 this.$router.push({
-                    name: "Home",
+                    name: "WhiteList",
                     // query: { id: id, type: 1 }
                 });
             } 

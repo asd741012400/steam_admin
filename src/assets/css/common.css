@@ -1,0 +1,17 @@
+.el-dialog__body{
+    padding-top:0;
+}
+.el-dialog__body .el_dialog_box{
+    padding-top:10px;
+    border-top: 1px solid #e8e8e8;
+}
+.el-dialog__body .el_dialog_box .dialog-footer{
+    display: flex;
+    justify-content: center;
+}
+.el-dialog__body .el_dialog_box .dialog-footer button{
+    width: 150px;
+}
+.wb100{
+    width: 100% !important;
+}

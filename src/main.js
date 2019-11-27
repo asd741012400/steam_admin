@@ -160,6 +160,9 @@ Vue.component(Backtop.name, Backtop);
 
 import 'element-ui/lib/theme-chalk/index.css'
 
+
+import '@/assets/css/common.css'
+
 // import '@/assets/css/element-variables.scss'
 
 

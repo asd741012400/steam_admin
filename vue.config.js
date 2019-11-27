@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 module.exports = {
   //...
-  // baseUrl: './',
+  baseUrl: './',
   pluginOptions:{
     entry:{
       app:["babel-polyfill","./src/main.js"]
