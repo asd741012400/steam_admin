@@ -1,5 +1,6 @@
 <template>
   <div class="WhiteList" :style="'min-height: '+boxMaxHeight+'px;'">
+    <header>白名单管理</header>
     <div class="box">
       <base-list ref="demoTable" :condition="condition"
                    :datas.sync="demoList" :pageSearch="pageSearch" :isPaging="true">
@@ -134,7 +135,7 @@ export default {
       pageSearch: customerList,       // 分页查询api接口
       form: {
       },
-      dialogForm: true,                //弹窗控制器
+      dialogForm: false,                //弹窗控制器
       rules: {
         p_id: [{required: true, message: '请选择一级类目', trigger: 'change'}],
         name: [{required: true, message: '请输入项目名称', trigger: 'change'}],
@@ -149,19 +150,19 @@ export default {
     },
 
     // 提交表单
-      handleSubmit() {
+    handleSubmit() {
 
-        this.$refs.myForm.validate((valid) => {
-          if (valid) {
-          } else {
-            this.$message({
-              message: '请检查表单',
-              type: 'error'
-            })
-          }
-        })
+      this.$refs.myForm.validate((valid) => {
+        if (valid) {
+        } else {
+          this.$message({
+            message: '请检查表单',
+            type: 'error'
+          })
+        }
+      })
 
-      },
+    },
   },
   // 挂载结束状态
   mounted() {
@@ -173,7 +174,22 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.WhiteList{
-  color: red;
+
+.WhiteList {
+  header {
+    width: 100%;
+    font-size: 16px;
+    padding-bottom: 10px;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .box {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-bottom:20px; 
+  }
 }
 </style>

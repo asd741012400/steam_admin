@@ -1,5 +1,5 @@
 <template>
-  <div class="InventoryClient" :style="'min-height: '+boxMaxHeight+'px;'">
+  <div class="RoleManagement" :style="'min-height: '+boxMaxHeight+'px;'">
     <div class="box">
       <base-list ref="demoTable" :condition="condition"
                    :datas.sync="demoList" :pageSearch="pageSearch" :isPaging="true">
@@ -86,7 +86,7 @@
 <script>
 import { customerList } from "@/assets/api/client/client"
 export default {
-  name: "InventoryClient",
+  name: "RoleManagement",
   components: {
   },
   data() {
@@ -121,7 +121,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.InventoryClient{
+.RoleManagement{
 
 }
 </style>

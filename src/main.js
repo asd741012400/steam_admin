@@ -162,6 +162,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 
 import '@/assets/css/common.css'
+import '@/assets/css/index.scss'
 
 // import '@/assets/css/element-variables.scss'
 

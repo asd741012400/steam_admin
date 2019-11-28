@@ -79,38 +79,7 @@
           </el-table>
         </base-list>
     </div>
-    <el-dialog title="新增" :visible.sync="dialogForm" width="400">
-      <div class="el_dialog_box">
-        <el-form ref="myForm" :model="form" :rules="rules" label-width="160px">
-            <el-form-item label="游戏" prop="name">
-              <el-select v-model="condition.sex" readonly="" clearable placeholder="请选择游戏" class="wb100">
-                <el-option label="全部" :value="'0'"></el-option>
-              </el-select>
-            </el-form-item>
-            <el-form-item label="name" prop="name">
-              <el-input type="text" v-model.trim="form.name" placeholder="请输入名称" clearable></el-input>
-            </el-form-item>
-            <el-form-item label="market_hash_name" prop="name">
-              <el-input type="text" v-model.trim="form.name" placeholder="请输入名称" clearable></el-input>
-            </el-form-item>
-            <el-form-item label="回收价" prop="name">
-              <el-input type="text" v-model.trim="form.name" placeholder="请输入名称" clearable></el-input>
-            </el-form-item>
-            <el-form-item label="每日收购上限" prop="name">
-              <el-input type="text" v-model.trim="form.name" placeholder="请输入名称" clearable></el-input>
-            </el-form-item>
-        </el-form>
-        <div slot="footer" class="dialog-footer">
-          <template v-if="disabled">
-            <el-button type="primary" disabled>提交中...</el-button>
-          </template>
-          <template v-else>
-            <el-button type="primary" @click="handleSubmit">保 存</el-button>
-          </template>
-          <el-button @click="dialogForm = false">取 消</el-button>
-        </div>
-      </div> 
-    </el-dialog>
+   
   </div>
 </template>
 
@@ -132,14 +101,7 @@ export default {
       },                                // 查询条件
       demoList: [],                      // table数组
       pageSearch: customerList,       // 分页查询api接口
-      form: {
-      },
-      dialogForm: true,                //弹窗控制器
-      rules: {
-        p_id: [{required: true, message: '请选择一级类目', trigger: 'change'}],
-        name: [{required: true, message: '请输入项目名称', trigger: 'change'}],
-      },
-      disabled: false,
+      
     }
   },
   created() {},
@@ -148,20 +110,7 @@ export default {
       this.$refs.demoTable.loadData()
     },
 
-    // 提交表单
-      handleSubmit() {
-
-        this.$refs.myForm.validate((valid) => {
-          if (valid) {
-          } else {
-            this.$message({
-              message: '请检查表单',
-              type: 'error'
-            })
-          }
-        })
-
-      },
+   
   },
   // 挂载结束状态
   mounted() {
@@ -173,7 +122,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.WhiteList{
-  color: red;
+.Inventory{
 }
 </style>

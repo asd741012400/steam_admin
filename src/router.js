@@ -63,6 +63,15 @@ const routes = [{
           title: '库存管理'
         }
       },
+      //汇率
+      {
+        path: '/ExchangeRate',
+        name: 'ExchangeRate',
+        component: resolve => require(['./views/business/RecycleManagement/ExchangeRate.vue'], resolve),
+        meta: {
+          title: '汇率'
+        }
+      },
       //用户列表
       {
         path: '/UserList',
@@ -106,6 +115,24 @@ const routes = [{
         component: resolve => require(['./views/business/RobotManagement/AffirmDeal.vue'], resolve),
         meta: {
           title: '确认交易报价'
+        }
+      },
+      //角色管理
+      {
+        path: '/RoleManagement',
+        name: 'RoleManagement',
+        component: resolve => require(['./views/business/Jurisdiction/RoleManagement.vue'], resolve),
+        meta: {
+          title: '角色管理'
+        }
+      },
+      //用户管理
+      {
+        path: '/UserManagement',
+        name: 'UserManagement',
+        component: resolve => require(['./views/business/Jurisdiction/UserManagement.vue'], resolve),
+        meta: {
+          title: '用户管理'
         }
       },
     ]

@@ -13,7 +13,7 @@
         active-text-color="#ffd04b">
         <el-submenu v-for="(item , index) in list" :key="index" :index="item.key">
           <template slot="title">
-            <i class="el-icon-location"></i>
+            <i :class="item.icon" class="icon_fz20 iconfont"></i>
             <span>{{item.name}}</span>
           </template>
           <!-- <div v-for="(itemName , indexName) in item.rows" :key="indexName">
@@ -57,6 +57,7 @@ export default {
         {
           name:'回收管理',
           key :"1",
+          icon:"icon-huishouzhan",
           rows:[
             {
               name:"白名单管理",
@@ -88,11 +89,17 @@ export default {
               key :"1-6",
               path:"/Inventory",
             },
+            {
+              name:"汇率",
+              key :"1-7",
+              path:"/ExchangeRate",
+            },
           ]
         },
         {
           name:'用户管理',
           key :"2",
+          icon:"icon-yonghuguanli",
           rows:[
             {
               name:"用户列表",
@@ -104,6 +111,7 @@ export default {
         {
           name:'机器人管理',
           key :"3",
+          icon:"icon-jiqiren",
           rows:[
             {
               name:"机器人steam帐号管理",
@@ -124,6 +132,23 @@ export default {
               name:"确认交易报价",
               key :"3-4",
               path:"/AffirmDeal",
+            },
+          ]
+        },
+        {
+          name:'权限',
+          key :"4",
+          icon:"icon-ic_opt_feature",
+          rows:[
+            {
+              name:"角色管理",
+              key :"4-1",
+              path:"/RoleManagement",
+            },
+            {
+              name:"用户管理",
+              key :"4-2",
+              path:"/UserManagement",
             },
           ]
         },

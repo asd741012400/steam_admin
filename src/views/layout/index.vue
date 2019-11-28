@@ -6,7 +6,7 @@
         <el-container class="elContainer">
             <div :style="'width: 100%;background-color: #f8f8f8;padding:20px;'">
                 <div class="contentRoute">
-                    <div class="mainBackground" :style="'background-color: #fff;padding:20px;'">
+                    <div class="mainBackground" :style="'background-color: #fff;padding:10px 20px;'">
                         <router-view></router-view>
                     </div>
                 </div>
